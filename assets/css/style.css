@@ -1,0 +1,190 @@
+/* Reset et configuration de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #2d5016 0%, #4a7c2c 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #f5f5dc;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+}
+
+.content {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 60px 40px;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(245, 245, 220, 0.1);
+}
+
+/* Logo */
+.logo {
+    margin-bottom: 30px;
+}
+
+.logo img {
+    max-width: 200px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Titre */
+h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #f5f5dc;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Message principal */
+.main-message {
+    font-size: 1.5rem;
+    color: #f5f5dc;
+    margin-bottom: 40px;
+    font-weight: 300;
+    opacity: 0.9;
+}
+
+/* Séparateur */
+.separator {
+    width: 100px;
+    height: 3px;
+    background: #f5f5dc;
+    margin: 40px auto;
+    border-radius: 2px;
+}
+
+/* Section mobile */
+.mobile-section h2 {
+    font-size: 1.8rem;
+    color: #f5f5dc;
+    margin-bottom: 30px;
+    font-weight: 400;
+}
+
+.platforms {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.platform {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    transition: transform 0.3s ease;
+}
+
+.platform:hover {
+    transform: translateY(-5px);
+}
+
+.platform-icon {
+    width: 80px;
+    height: 80px;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+    transition: filter 0.3s ease;
+}
+
+.platform:hover .platform-icon {
+    filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.3));
+}
+
+.platform span {
+    font-size: 1.2rem;
+    color: #f5f5dc;
+    font-weight: 500;
+}
+
+/* Message de pied */
+.footer-message {
+    font-size: 1rem;
+    color: #f5f5dc;
+    opacity: 0.7;
+    font-style: italic;
+    margin-top: 20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .content {
+        padding: 40px 30px;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .main-message {
+        font-size: 1.2rem;
+    }
+
+    .mobile-section h2 {
+        font-size: 1.4rem;
+    }
+
+    .platforms {
+        gap: 40px;
+    }
+
+    .platform-icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .logo img {
+        max-width: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .content {
+        padding: 30px 20px;
+    }
+
+    h1 {
+        font-size: 2rem;
+        letter-spacing: 1px;
+    }
+
+    .main-message {
+        font-size: 1rem;
+    }
+
+    .mobile-section h2 {
+        font-size: 1.2rem;
+    }
+
+    .platforms {
+        gap: 30px;
+    }
+
+    .platform-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .platform span {
+        font-size: 1rem;
+    }
+}
