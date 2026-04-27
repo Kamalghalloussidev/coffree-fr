@@ -137,7 +137,7 @@ ul { list-style: none; }
     position: fixed;
     top: 0; left: 0; right: 0;
     z-index: 1000;
-    background: rgba(24,67,47,0.97);
+    background: #16432f;
     backdrop-filter: blur(8px);
     border-bottom: 1px solid transparent;
     transition: border-color var(--transition);
@@ -1166,7 +1166,7 @@ ul { list-style: none; }
    ============================================= */
 
 #footer {
-    background: rgba(24,67,47,0.97);
+    background: #16432f;
     color: rgba(255,255,255,0.7);
     padding: 48px 0 32px;
 }
