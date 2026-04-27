@@ -18,11 +18,12 @@
         <div class="nav-inner">
             <a href="#" class="nav-logo">
                 <img src="assets/images/logo.jpeg" alt="Cof'free">
-                <span>Cof'free</span>
             </a>
             <ul class="nav-links">
                 <li><a href="#features">Fonctionnalités</a></li>
+                <li><a href="#how-it-works">Comment ça marche</a></li>
                 <li><a href="#about">À propos</a></li>
+                <li><a href="#aide">Aide</a></li>
                 <li><a href="#download">Contact</a></li>
             </ul>
             <a href="#download" class="btn btn-nav">Télécharger</a>
@@ -36,7 +37,24 @@
     <section id="banner">
         <div class="banner-inner">
             <div class="banner-text">
-                <p class="banner-eyebrow">Bientôt disponible</p>
+                <div class="banner-eyebrow-row">
+                    <div class="banner-store-badges">
+                        <a href="#" class="banner-store-badge" title="Bientôt sur App Store">
+                            <img src="assets/svg/apple-13.svg" alt="Apple iOS" class="banner-store-icon">
+                            <div class="banner-store-text">
+                                <small>Bientôt sur</small>
+                                <strong>App Store</strong>
+                            </div>
+                        </a>
+                        <a href="#" class="banner-store-badge" title="Bientôt sur Google Play">
+                            <img src="assets/svg/android-logo-2.svg" alt="Android" class="banner-store-icon">
+                            <div class="banner-store-text">
+                                <small>Bientôt sur</small>
+                                <strong>Google Play</strong>
+                            </div>
+                        </a>
+                    </div>
+                </div>
                 <h1>Stockez vos courses dans le <span>coffre de voiture d'un voisin</span></h1>
                 <p class="banner-sub">Cof'free met en relation des personnes cherchant un espace de stockage temporaire avec des Coffreurs qui monnayent l'espace inutilisé de leur coffre, près de chez vous.</p>
                 <div class="banner-actions">
@@ -81,6 +99,119 @@
                     <h3>Avis & confiance mutuelle</h3>
                     <p>Après chaque transaction, demandeurs et Coffreurs se notent mutuellement. Un système d'avis bidirectionnel qui garantit la qualité et la sérénité de chaque échange.</p>
                 </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== COMMENT ÇA MARCHE ===== -->
+    <section id="how-it-works" class="section section-dark">
+        <div class="container">
+            <header class="section-header section-header-light">
+                <h2>Comment ça marche ?</h2>
+                <p>Un flux simple et sécurisé, de la réservation à la récupération.</p>
+            </header>
+
+            <div class="flow-tabs" role="tablist">
+                <button class="flow-tab active" data-flow="demandeur" role="tab" aria-selected="true">
+                    <i class="fas fa-shopping-bag"></i> Je cherche un espace
+                </button>
+                <button class="flow-tab" data-flow="coffreur" role="tab" aria-selected="false">
+                    <i class="fas fa-car"></i> Je suis Coffreur
+                </button>
+            </div>
+
+            <!-- Flux Demandeur -->
+            <div class="flow-steps active" id="flow-demandeur" role="tabpanel">
+                <div class="flow-step" data-delay="0">
+                    <div class="flow-step-icon"><i class="fas fa-map-marked-alt"></i></div>
+                    <div class="flow-step-content">
+                        <span class="flow-step-num">01</span>
+                        <h3>Trouvez un Coffreur près de vous</h3>
+                        <p>Ouvrez l'app, activez votre position. La carte affiche en temps réel les Coffreurs disponibles autour de vous. Filtrez par taille de coffre, créneau ou mode d'ouverture.</p>
+                    </div>
+                </div>
+                <div class="flow-step" data-delay="150">
+                    <div class="flow-step-icon"><i class="fas fa-calendar-check"></i></div>
+                    <div class="flow-step-content">
+                        <span class="flow-step-num">02</span>
+                        <h3>Réservez votre créneau</h3>
+                        <p>Choisissez le type de colis (courses, colis, bagages), l'enseigne concernée, le jour et le créneau horaire. Confirmez votre réservation en quelques secondes.</p>
+                    </div>
+                </div>
+                <div class="flow-step" data-delay="300">
+                    <div class="flow-step-icon"><i class="fas fa-lock"></i></div>
+                    <div class="flow-step-content">
+                        <span class="flow-step-num">03</span>
+                        <h3>Payez en toute sécurité</h3>
+                        <p>Le paiement est sécurisé via Stripe. Les fonds sont réservés mais ne sont versés au Coffreur qu'une fois vos courses récupérées — votre argent est protégé.</p>
+                        <span class="flow-notif"><i class="fas fa-sms"></i> SMS de confirmation</span>
+                        <span class="flow-notif"><i class="fas fa-bell"></i> Push reçu</span>
+                    </div>
+                </div>
+                <div class="flow-step" data-delay="450">
+                    <div class="flow-step-icon"><i class="fas fa-box-open"></i></div>
+                    <div class="flow-step-content">
+                        <span class="flow-step-num">04</span>
+                        <h3>Récupérez vos courses</h3>
+                        <p>Vous êtes notifié dès que le Coffreur dépose vos colis dans son coffre. Allez récupérer vos courses, puis confirmez la récupération dans l'app — le paiement est libéré.</p>
+                        <span class="flow-notif"><i class="fas fa-bell"></i> "Vos courses sont prêtes !"</span>
+                    </div>
+                </div>
+                <div class="flow-step" data-delay="600">
+                    <div class="flow-step-icon"><i class="fas fa-star"></i></div>
+                    <div class="flow-step-content">
+                        <span class="flow-step-num">05</span>
+                        <h3>Laissez un avis</h3>
+                        <p>Après chaque transaction, notez votre Coffreur. Il vous note aussi. Ce système bidirectionnel garantit la qualité et la confiance pour toute la communauté.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Flux Coffreur -->
+            <div class="flow-steps" id="flow-coffreur" role="tabpanel">
+                <div class="flow-step" data-delay="0">
+                    <div class="flow-step-icon"><i class="fas fa-id-card"></i></div>
+                    <div class="flow-step-content">
+                        <span class="flow-step-num">01</span>
+                        <h3>Inscrivez-vous en quelques étapes</h3>
+                        <p>Photos de votre coffre, pièce d'identité, infos véhicule, disponibilités hebdomadaires et coordonnées bancaires via Stripe Connect. Votre dossier est envoyé pour validation.</p>
+                    </div>
+                </div>
+                <div class="flow-step" data-delay="150">
+                    <div class="flow-step-icon"><i class="fas fa-toggle-on"></i></div>
+                    <div class="flow-step-content">
+                        <span class="flow-step-num">02</span>
+                        <h3>Activez votre coffre</h3>
+                        <p>Une fois validé, activez ou désactivez votre coffre à tout moment depuis votre dashboard. Gérez votre planning hebdomadaire et ajoutez des créneaux exceptionnels ponctuels.</p>
+                    </div>
+                </div>
+                <div class="flow-step" data-delay="300">
+                    <div class="flow-step-icon"><i class="fas fa-bell"></i></div>
+                    <div class="flow-step-content">
+                        <span class="flow-step-num">03</span>
+                        <h3>Recevez une réservation</h3>
+                        <p>Un Demandeur réserve votre coffre. Vous êtes alerté instantanément. Consultez le détail de la livraison — jour, créneau, type de colis — directement dans l'application.</p>
+                        <span class="flow-notif"><i class="fas fa-bell"></i> "Nouvelle réservation !"</span>
+                        <span class="flow-notif"><i class="fas fa-sms"></i> SMS reçu</span>
+                    </div>
+                </div>
+                <div class="flow-step" data-delay="450">
+                    <div class="flow-step-icon"><i class="fas fa-box"></i></div>
+                    <div class="flow-step-content">
+                        <span class="flow-step-num">04</span>
+                        <h3>Déposez les colis dans votre coffre</h3>
+                        <p>Récupérez les courses, déposez-les dans votre coffre et validez le dépôt dans l'app avec une photo de confirmation. Le Demandeur est automatiquement prévenu.</p>
+                    </div>
+                </div>
+                <div class="flow-step" data-delay="600">
+                    <div class="flow-step-icon"><i class="fas fa-money-bill-wave"></i></div>
+                    <div class="flow-step-content">
+                        <span class="flow-step-num">05</span>
+                        <h3>Recevez votre paiement</h3>
+                        <p>Dès que le Demandeur confirme la récupération, le paiement Stripe est libéré automatiquement sur votre compte bancaire. Suivez vos revenus depuis votre dashboard.</p>
+                        <span class="flow-notif"><i class="fas fa-money-bill-wave"></i> "Paiement libéré ! 💰"</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -196,6 +327,259 @@
         </div>
     </section>
 
+    <!-- ===== AIDE — 3 ONGLETS ===== -->
+    <section id="aide" class="section section-light">
+        <div class="container">
+            <header class="section-header">
+                <h2>Centre d'aide</h2>
+                <p>Tout ce que vous devez savoir sur Cof'free.</p>
+            </header>
+
+            <div class="help-tabs" role="tablist">
+                <button class="help-tab active" data-help="howto" role="tab" aria-selected="true">
+                    <i class="fas fa-route"></i> Comment ça marche ?
+                </button>
+                <button class="help-tab" data-help="charte" role="tab" aria-selected="false">
+                    <i class="fas fa-file-contract"></i> Charte
+                </button>
+                <button class="help-tab" data-help="faq" role="tab" aria-selected="false">
+                    <i class="fas fa-question-circle"></i> FAQ
+                </button>
+            </div>
+
+            <!-- ===== ONGLET 1 : Comment ça marche ? ===== -->
+            <div class="help-panel active" id="help-howto" role="tabpanel">
+                <div class="howto-steps">
+
+                    <div class="howto-step">
+                        <div class="howto-num">1</div>
+                        <div class="howto-body">
+                            <div class="howto-icon"><i class="fas fa-user-plus"></i></div>
+                            <h3>Je m'inscris</h3>
+                            <p>Créez votre compte adhérent Cof'free directement depuis l'application, en quelques secondes.</p>
+                        </div>
+                    </div>
+
+                    <div class="howto-step">
+                        <div class="howto-num">2</div>
+                        <div class="howto-body">
+                            <div class="howto-icon"><i class="fas fa-car"></i></div>
+                            <h3>Je renseigne mes informations</h3>
+                            <p>Coordonnées, numéro de téléphone, adresse habituelle, informations sur votre véhicule et vos horaires de disponibilité.</p>
+                        </div>
+                    </div>
+
+                    <div class="howto-step">
+                        <div class="howto-num">3</div>
+                        <div class="howto-body">
+                            <div class="howto-icon"><i class="fas fa-shopping-cart"></i></div>
+                            <h3>Je commande mes courses</h3>
+                            <p>Passez commande via l'application. La livraison est effectuée dans votre coffre, à votre lieu de travail, votre parking ou l'endroit de votre choix.</p>
+                        </div>
+                    </div>
+
+                    <div class="howto-step">
+                        <div class="howto-num">4</div>
+                        <div class="howto-body">
+                            <div class="howto-icon"><i class="fas fa-key"></i></div>
+                            <h3>J'ouvre mon coffre au livreur</h3>
+                            <p>En personne, via télécommande, application constructeur ou boîte connectée — plusieurs méthodes adaptées à votre véhicule.</p>
+                        </div>
+                    </div>
+
+                    <div class="howto-step">
+                        <div class="howto-num">5</div>
+                        <div class="howto-body">
+                            <div class="howto-icon"><i class="fas fa-box-open"></i></div>
+                            <h3>Je récupère mes courses</h3>
+                            <p>Vos courses sont dans votre coffre. Pas de détour, pas de carburant gaspillé — vous récupérez tout à votre convenance.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- ===== ONGLET 2 : Charte ===== -->
+            <div class="help-panel" id="help-charte" role="tabpanel">
+                <div class="charte-grid">
+
+                    <div class="charte-card">
+                        <div class="charte-card-header">
+                            <span class="charte-emoji">🚗</span>
+                            <h3>Avant mes livraisons</h3>
+                        </div>
+                        <ul class="charte-list">
+                            <li>
+                                <strong>Je fournis des informations exactes</strong>
+                                <span>1 seul compte par personne, identité réelle, infos véhicule fiables et à jour.</span>
+                            </li>
+                            <li>
+                                <strong>Je prépare mon véhicule</strong>
+                                <span>Coffre vidé et accessible, ouverture à distance activée et fonctionnelle.</span>
+                            </li>
+                            <li>
+                                <strong>Je choisis un emplacement adapté</strong>
+                                <span>Stationnement autorisé, sécurisé et facilement accessible pour le livreur.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="charte-card">
+                        <div class="charte-card-header">
+                            <span class="charte-emoji">📦</span>
+                            <h3>Pendant mes livraisons</h3>
+                        </div>
+                        <ul class="charte-list">
+                            <li>
+                                <strong>Je respecte les créneaux</strong>
+                                <span>Véhicule disponible à l'heure, mise à jour immédiate en cas de déplacement.</span>
+                            </li>
+                            <li>
+                                <strong>Je facilite le travail du livreur</strong>
+                                <span>Instructions claires dans l'app, coffre vidé et prêt à recevoir la commande.</span>
+                            </li>
+                            <li>
+                                <strong>Je respecte la confidentialité</strong>
+                                <span>Pas de contact direct avec le livreur en dehors du cadre de la livraison.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="charte-card">
+                        <div class="charte-card-header">
+                            <span class="charte-emoji">🔒</span>
+                            <h3>Après mes livraisons</h3>
+                        </div>
+                        <ul class="charte-list">
+                            <li>
+                                <strong>Je vérifie ma commande rapidement</strong>
+                                <span>Confirmation dans l'app, tout incident signalé directement au commerçant.</span>
+                            </li>
+                            <li>
+                                <strong>Je respecte les livreurs</strong>
+                                <span>Évaluation honnête et compréhension de leur procédure de livraison.</span>
+                            </li>
+                            <li>
+                                <strong>Je protège les données des livreurs</strong>
+                                <span>Aucune conservation d'informations personnelles hors de l'application.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="charte-card">
+                        <div class="charte-card-header">
+                            <span class="charte-emoji">🛡️</span>
+                            <h3>Sécurité et responsabilité</h3>
+                        </div>
+                        <ul class="charte-list">
+                            <li>
+                                <strong>Je suis responsable de mon véhicule</strong>
+                                <span>Coffre en bon état, chaîne du froid maintenue pour les produits surgelés.</span>
+                            </li>
+                            <li>
+                                <strong>Je respecte les règles du site</strong>
+                                <span>Règlement de l'entreprise, du campus ou du parking respecté en tout temps.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- ===== ONGLET 3 : FAQ ===== -->
+            <div class="help-panel" id="help-faq" role="tabpanel">
+                <div class="faq-list">
+
+                    <details class="faq-item">
+                        <summary><span>Comment fonctionne Cof'free ?</span><i class="fas fa-chevron-down"></i></summary>
+                        <div class="faq-body">
+                            <p>Cof'free met en relation des personnes cherchant un espace de stockage temporaire pour leurs courses ou colis avec des Coffreurs — des propriétaires de coffres de voiture qui monnayent leur espace inutilisé. Vous réservez un créneau, le Coffreur dépose vos courses dans son coffre, et vous les récupérez à votre convenance.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary><span>Comment le livreur a-t-il accès à mon coffre ?</span><i class="fas fa-chevron-down"></i></summary>
+                        <div class="faq-body">
+                            <p>Plusieurs méthodes sont disponibles selon votre véhicule :</p>
+                            <ul>
+                                <li><strong>En personne</strong> — vous êtes présent pour ouvrir vous-même.</li>
+                                <li><strong>Télécommande</strong> — vous ouvrez à distance via votre télécommande.</li>
+                                <li><strong>Application constructeur</strong> — via l'app officielle de votre marque (Tesla, BMW, etc.).</li>
+                                <li><strong>Boîte connectée</strong> — un dispositif tiers installé sur votre véhicule.</li>
+                                <li><strong>Accès partagé</strong> — vous déléguez temporairement l'accès via l'application.</li>
+                            </ul>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary><span>Comment le livreur sait-il quelle méthode utiliser ?</span><i class="fas fa-chevron-down"></i></summary>
+                        <div class="faq-body">
+                            <p>Lors de votre inscription, vous renseignez votre méthode d'ouverture préférée dans votre profil. Ces informations sont transmises au Coffreur au moment de la livraison.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary><span>Est-ce sécurisé ?</span><i class="fas fa-chevron-down"></i></summary>
+                        <div class="faq-body">
+                            <p>Oui. Tous les Coffreurs sont vérifiés (pièce d'identité, véhicule). Les paiements sont sécurisés via Stripe. L'accès à votre coffre n'est accordé que pendant le créneau réservé, et une photo de confirmation est prise à chaque dépôt.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary><span>Dois-je être près de ma voiture ?</span><i class="fas fa-chevron-down"></i></summary>
+                        <div class="faq-body">
+                            <p>Pas nécessairement. Si vous utilisez une méthode d'ouverture à distance (app constructeur, boîte connectée), vous pouvez ouvrir votre coffre depuis n'importe où. Si vous optez pour la présence physique, il faudra simplement être disponible sur le créneau choisi.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary><span>Comment le livreur trouve mon véhicule ?</span><i class="fas fa-chevron-down"></i></summary>
+                        <div class="faq-body">
+                            <p>Vous renseignez dans l'app l'emplacement exact de votre véhicule (adresse, parking, étage, numéro de place). Ces informations sont communiquées au Coffreur au moment de la livraison.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary><span>Que se passe-t-il si je déplace ma voiture ?</span><i class="fas fa-chevron-down"></i></summary>
+                        <div class="faq-body">
+                            <p>Mettez à jour l'emplacement de votre véhicule dans l'app dès que possible. En cas d'indisponibilité, signalez-le avant le créneau pour éviter tout problème. Le Coffreur sera notifié automatiquement.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary><span>Le livreur peut-il voir mes informations personnelles ?</span><i class="fas fa-chevron-down"></i></summary>
+                        <div class="faq-body">
+                            <p>Non. Le Coffreur n'a accès qu'aux informations strictement nécessaires à la livraison : emplacement du véhicule, méthode d'ouverture et créneau horaire. Vos données personnelles sont protégées conformément au RGPD.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary><span>Que faire si mon coffre est plein avant la livraison ?</span><i class="fas fa-chevron-down"></i></summary>
+                        <div class="faq-body">
+                            <p>Videz votre coffre avant le créneau de livraison. Si ce n'est pas possible, signalez-le dans l'app pour modifier ou annuler la réservation. Des annulations répétées peuvent impacter votre évaluation.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary><span>Puis-je recevoir des produits frais ou surgelés ?</span><i class="fas fa-chevron-down"></i></summary>
+                        <div class="faq-body">
+                            <p>Oui, sous conditions. Vous êtes responsable du maintien de la chaîne du froid dans votre coffre. Assurez-vous d'être disponible rapidement après la livraison pour récupérer vos produits frais ou congelés.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary><span>Que faire en cas de problème avec ma commande ?</span><i class="fas fa-chevron-down"></i></summary>
+                        <div class="faq-body">
+                            <p>Signalez le problème directement depuis l'app via la section Litige. Décrivez l'incident et joignez des photos si nécessaire. Notre équipe examine chaque litige sous 48h et un remboursement Stripe est possible si le problème est avéré.</p>
+                        </div>
+                    </details>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
     <!-- ===== DOWNLOAD / INSCRIPTION CTA ===== -->
     <section id="download" class="section section-dark">
         <div class="container">
@@ -243,7 +627,7 @@
                     <li><a href="#download">Contact</a></li>
                 </ul>
             </div>
-            <p class="footer-copy">&copy; 2026 Cof'free. Tous droits réservés. Design inspiré de <a href="https://html5up.net" target="_blank" rel="noopener">HTML5 UP</a></p>
+            <p class="footer-copy">&copy; 2026 Cof'free. Tous droits réservés.</p>
         </div>
     </footer>
 
@@ -253,7 +637,9 @@
             <button class="navpanel-close" aria-label="Fermer le menu"><i class="fas fa-times"></i></button>
             <nav>
                 <a href="#features">Fonctionnalités</a>
+                <a href="#how-it-works">Comment ça marche</a>
                 <a href="#about">À propos</a>
+                <a href="#aide">Aide</a>
                 <a href="#download">Contact</a>
                 <a href="#download" class="navpanel-cta">Télécharger</a>
             </nav>

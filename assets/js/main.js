@@ -7,21 +7,20 @@ document.addEventListener('DOMContentLoaded', function () {
     initNav();
     initMobileMenu();
     initScrollAnimations();
+    initFlowTabs();
+    initFlowAnimation();
+    initHelpTabs();
     initSignupForm();
     initSmoothScroll();
 
 });
 
-/* ===== NAVIGATION : fond au scroll ===== */
+/* ===== NAVIGATION : bordure au scroll ===== */
 function initNav() {
     const nav = document.getElementById('nav');
     if (!nav) return;
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 40) {
-            nav.style.background = 'rgba(16,46,32,0.98)';
-        } else {
-            nav.style.background = 'rgba(24,67,47,0.97)';
-        }
+        nav.classList.toggle('scrolled', window.scrollY > 40);
     }, { passive: true });
 }
 
@@ -115,6 +114,93 @@ function showFormFeedback(form, message, success) {
     }
     msg.textContent = message;
     msg.style.color = success ? '#FFD700' : '#ff6b6b';
+}
+
+/* ===== HELP TABS ===== */
+function initHelpTabs() {
+    const tabs = document.querySelectorAll('.help-tab');
+    if (!tabs.length) return;
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', function () {
+            const helpId = this.dataset.help;
+
+            tabs.forEach(t => {
+                t.classList.remove('active');
+                t.setAttribute('aria-selected', 'false');
+            });
+            this.classList.add('active');
+            this.setAttribute('aria-selected', 'true');
+
+            document.querySelectorAll('.help-panel').forEach(p => p.classList.remove('active'));
+            const panel = document.getElementById('help-' + helpId);
+            if (panel) panel.classList.add('active');
+        });
+    });
+}
+
+/* ===== FLOW TABS ===== */
+function initFlowTabs() {
+    const tabs = document.querySelectorAll('.flow-tab');
+    if (!tabs.length) return;
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', function () {
+            const flowId = this.dataset.flow;
+
+            // Update tabs
+            tabs.forEach(t => {
+                t.classList.remove('active');
+                t.setAttribute('aria-selected', 'false');
+            });
+            this.classList.add('active');
+            this.setAttribute('aria-selected', 'true');
+
+            // Update panels
+            document.querySelectorAll('.flow-steps').forEach(panel => {
+                panel.classList.remove('active');
+            });
+            const activePanel = document.getElementById('flow-' + flowId);
+            if (activePanel) {
+                activePanel.classList.add('active');
+                // Re-trigger animation for newly shown panel
+                activePanel.classList.remove('line-drawn');
+                activePanel.querySelectorAll('.flow-step').forEach(s => s.classList.remove('visible'));
+                setTimeout(() => triggerFlowAnimation(activePanel), 80);
+            }
+        });
+    });
+}
+
+/* ===== FLOW ANIMATION AU SCROLL ===== */
+function initFlowAnimation() {
+    const section = document.getElementById('how-it-works');
+    if (!section) return;
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const activePanel = section.querySelector('.flow-steps.active');
+                if (activePanel) triggerFlowAnimation(activePanel);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.15 });
+
+    observer.observe(section);
+}
+
+function triggerFlowAnimation(panel) {
+    const steps = panel.querySelectorAll('.flow-step');
+
+    // Draw the vertical line
+    setTimeout(() => panel.classList.add('line-drawn'), 100);
+
+    // Reveal steps with staggered delay
+    steps.forEach((step, i) => {
+        const delay = parseInt(step.dataset.delay || 0, 10) + 100;
+        setTimeout(() => step.classList.add('visible'), delay);
+    });
 }
 
 /* ===== SMOOTH SCROLL pour les ancres ===== */
