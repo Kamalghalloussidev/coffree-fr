@@ -603,6 +603,65 @@ ul { list-style: none; }
 }
 
 /* =============================================
+   GRANDES IMAGES APP
+   ============================================= */
+
+.preview-large {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.preview-large-item {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    line-height: 0;
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+.preview-large-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.22);
+}
+
+.preview-large-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 20px;
+}
+
+/* =============================================
+   SCREENSHOTS PETITS (PLAY STORE)
+   ============================================= */
+
+.screenshots-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    align-items: start;
+}
+
+.screenshot-item {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    line-height: 0;
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+.screenshot-item:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: var(--shadow-lg);
+}
+
+.screenshot-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 20px;
+}
+
+/* =============================================
    FOOTER
    ============================================= */
 
@@ -759,6 +818,12 @@ ul { list-style: none; }
     .banner-sub { max-width: 100%; margin-left: auto; margin-right: auto; }
     .banner-actions { justify-content: center; }
     .banner-eyebrow { margin-left: auto; margin-right: auto; }
+
+    /* Screenshots : 2 colonnes sur tablette */
+    .screenshots-row {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -771,6 +836,12 @@ ul { list-style: none; }
     .phone-mockup {
         width: 200px;
         height: 400px;
+    }
+
+    /* Grandes images : coins moins arrondis sur mobile */
+    .preview-large-item,
+    .preview-large-item img {
+        border-radius: 14px;
     }
 }
 
@@ -805,5 +876,15 @@ ul { list-style: none; }
     .banner-actions .btn {
         width: 100%;
         justify-content: center;
+    }
+
+    /* Screenshots : 2 colonnes sur petit mobile */
+    .screenshots-row {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+    }
+    .screenshot-item,
+    .screenshot-item img {
+        border-radius: 14px;
     }
 }

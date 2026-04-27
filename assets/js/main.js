@@ -58,7 +58,7 @@ function initMobileMenu() {
 /* ===== ANIMATIONS AU SCROLL ===== */
 function initScrollAnimations() {
     const targets = document.querySelectorAll(
-        '.feature-card, .highlight-row, .section-header, .store-badge'
+        '.feature-card, .highlight-row, .section-header, .store-badge, .preview-large-item, .screenshot-item'
     );
     targets.forEach(el => {
         el.style.opacity = '0';
