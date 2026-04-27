@@ -3,53 +3,202 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="COFFREE.FR - Site et application mobile en cours de construction">
-    <title>COFFREE.FR - En cours de construction</title>
+    <meta name="description" content="Cof'free — L'application mobile qui connecte les personnes cherchant un espace de stockage temporaire avec des Coffreurs qui monnayent l'espace de leur coffre de voiture.">
+    <title>Cof'free — Le coffre de voiture partagé</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <div class="container">
-        <div class="content">
-            <!-- Logo -->
-            <div class="logo">
-                <img src="assets/images/logo.jpeg" alt="COFFREE.FR Logo">
-            </div>
 
-            <!-- Titre principal -->
-            <h1>COFFREE.FR</h1>
-            
-            <!-- Message -->
-            <p class="main-message">Site en cours de construction</p>
-            
-            <!-- Séparateur -->
-            <div class="separator"></div>
-            
-            <!-- Applications mobiles -->
-            <div class="mobile-section">
-                <h2>Applications mobiles bientôt disponibles</h2>
-                <div class="platforms">
-                    <div class="platform">
-                        <img src="assets/svg/android-logo-2.svg" alt="Android" class="platform-icon">
-                        <span>Android</span>
+    <!-- ===== NAVIGATION ===== -->
+    <nav id="nav">
+        <div class="nav-inner">
+            <a href="#" class="nav-logo">
+                <img src="assets/images/logo.jpeg" alt="Cof'free">
+                <span>Cof'free</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#features">Fonctionnalités</a></li>
+                <li><a href="#about">À propos</a></li>
+                <li><a href="#download">Contact</a></li>
+            </ul>
+            <a href="#download" class="btn btn-nav">Télécharger</a>
+            <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ===== HERO / BANNER ===== -->
+    <section id="banner">
+        <div class="banner-inner">
+            <div class="banner-text">
+                <p class="banner-eyebrow">Bientôt disponible</p>
+                <h1>Stockez vos courses dans le <span>coffre de voiture d'un voisin</span></h1>
+                <p class="banner-sub">Cof'free met en relation des personnes cherchant un espace de stockage temporaire avec des Coffreurs qui monnayent l'espace inutilisé de leur coffre, près de chez vous.</p>
+                <div class="banner-actions">
+                    <a href="#download" class="btn btn-primary">Être notifié au lancement</a>
+                    <a href="#features" class="btn btn-outline">Découvrir l'app</a>
+                </div>
+            </div>
+            <div class="banner-visual">
+                <div class="phone-mockup">
+                    <div class="phone-notch"></div>
+                    <div class="phone-screen">
+                        <img src="assets/images/logo.jpeg" alt="Cof'free App" class="phone-logo">
+                        <p class="phone-app-name">Cof'free</p>
+                        <p class="phone-app-sub">Le coffre de voiture partagé</p>
+                        <div class="phone-dots">
+                            <span></span><span class="active"></span><span></span>
+                        </div>
                     </div>
-                    <div class="platform">
-                        <img src="assets/svg/apple-13.svg" alt="iOS" class="platform-icon">
-                        <span>iOS</span>
+                </div>
+                <div class="phone-glow"></div>
+            </div>
+        </div>
+        <a href="#features" class="scroll-hint"><i class="fas fa-chevron-down"></i></a>
+    </section>
+
+    <!-- ===== FEATURES — 3 colonnes ===== -->
+    <section id="features" class="section section-light">
+        <div class="container">
+            <header class="section-header">
+                <h2>Simple, rapide, sécurisé</h2>
+                <p>Deux profils, une seule application — que vous ayez besoin d'espace ou que vous en proposiez un.</p>
+            </header>
+            <div class="features-grid">
+                <article class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-map-marked-alt"></i></div>
+                    <h3>Carte interactive</h3>
+                    <p>Repérez en temps réel les Coffreurs disponibles autour de vous. Filtrez par taille de coffre, disponibilité et mode d'accès — puis réservez votre créneau en quelques secondes.</p>
+                </article>
+                <article class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-calendar-check"></i></div>
+                    <h3>Réservation en un clic</h3>
+                    <p>Sélectionnez une date, un créneau horaire et confirmez votre dépôt. Suivez chaque étape — dépôt et récupération — directement depuis votre historique de livraisons.</p>
+                </article>
+                <article class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-star"></i></div>
+                    <h3>Avis & confiance mutuelle</h3>
+                    <p>Après chaque transaction, demandeurs et Coffreurs se notent mutuellement. Un système d'avis bidirectionnel qui garantit la qualité et la sérénité de chaque échange.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== HIGHLIGHTS — alternance gauche / droite ===== -->
+    <section id="about" class="section section-beige">
+        <div class="container">
+
+            <div class="highlight-row">
+                <div class="highlight-visual">
+                    <div class="highlight-card">
+                        <i class="fas fa-id-card"></i>
                     </div>
+                </div>
+                <div class="highlight-text">
+                    <h2>Devenez Coffreur, monétisez votre coffre</h2>
+                    <p>Vous avez un coffre de voiture souvent vide ? Inscrivez-vous en quelques étapes — photos de votre véhicule, pièce d'identité, horaires de disponibilité — et commencez à générer des revenus en proposant votre espace aux personnes qui en ont besoin autour de vous.</p>
                 </div>
             </div>
 
-            <!-- Message de pied -->
-            <p class="footer-message">Nous travaillons activement sur quelque chose d'exceptionnel</p>
-            
-            <!-- Lien vers les CGU -->
-            <p class="policy-link">
-                <a href="policy.html">Conditions Générales d'Utilisation</a>
-            </p>
+            <div class="highlight-row reverse">
+                <div class="highlight-visual">
+                    <div class="highlight-card">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                </div>
+                <div class="highlight-text">
+                    <h2>Paiements sécurisés par Stripe</h2>
+                    <p>Chaque transaction est sécurisée via Stripe Connect. Les Coffreurs reçoivent leurs virements directement sur leur compte bancaire, après validation du dépôt et de la récupération, avec une vérification photo à chaque étape.</p>
+                    <a href="#download" class="btn btn-primary">Être notifié au lancement</a>
+                </div>
+            </div>
+
+            <div class="highlight-row">
+                <div class="highlight-visual">
+                    <div class="highlight-card">
+                        <i class="fas fa-bell"></i>
+                    </div>
+                </div>
+                <div class="highlight-text">
+                    <h2>Notifications & suivi en temps réel</h2>
+                    <p>Recevez des alertes à chaque étape de votre réservation — confirmation, dépôt, récupération. Le centre de notifications in-app et les push Firebase vous tiennent informé, que vous soyez demandeur ou Coffreur.</p>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+    <!-- ===== DOWNLOAD / INSCRIPTION CTA ===== -->
+    <section id="download" class="section section-dark">
+        <div class="container">
+            <header class="section-header section-header-light">
+                <h2>Soyez parmi les premiers</h2>
+                <p>L'app arrive bientôt sur iOS et Android. Inscrivez-vous pour être notifié dès le lancement.</p>
+            </header>
+            <form class="signup-form" id="signupForm" novalidate>
+                <div class="signup-fields">
+                    <input type="email" name="email" placeholder="Votre adresse e-mail" required autocomplete="email">
+                    <button type="submit" class="btn btn-cta">S'inscrire</button>
+                </div>
+                <p class="signup-note">Aucun spam. Désinscription en un clic.</p>
+            </form>
+            <div class="store-badges">
+                <a href="#" class="store-badge" title="Bientôt sur App Store">
+                    <img src="assets/svg/apple-13.svg" alt="Apple iOS" class="store-icon">
+                    <div class="store-text">
+                        <small>Bientôt sur</small>
+                        <strong>App Store</strong>
+                    </div>
+                </a>
+                <a href="#" class="store-badge" title="Bientôt sur Google Play">
+                    <img src="assets/svg/android-logo-2.svg" alt="Android" class="store-icon">
+                    <div class="store-text">
+                        <small>Bientôt sur</small>
+                        <strong>Google Play</strong>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer id="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-brand">
+                    <img src="assets/images/logo.jpeg" alt="Cof'free" class="footer-logo">
+                    <span>Cof'free</span>
+                </div>
+                <ul class="footer-links">
+                    <li><a href="policy.html">CGU</a></li>
+                    <li><a href="#">Mentions légales</a></li>
+                    <li><a href="#download">Contact</a></li>
+                </ul>
+            </div>
+            <p class="footer-copy">&copy; 2026 Cof'free. Tous droits réservés. Design inspiré de <a href="https://html5up.net" target="_blank" rel="noopener">HTML5 UP</a></p>
+        </div>
+    </footer>
+
+    <!-- Mobile Nav Panel -->
+    <div id="navPanel" aria-hidden="true">
+        <div class="navpanel-inner">
+            <button class="navpanel-close" aria-label="Fermer le menu"><i class="fas fa-times"></i></button>
+            <nav>
+                <a href="#features">Fonctionnalités</a>
+                <a href="#about">À propos</a>
+                <a href="#download">Contact</a>
+                <a href="#download" class="navpanel-cta">Télécharger</a>
+            </nav>
         </div>
     </div>
+    <div id="navOverlay"></div>
 
-    <!-- Scripts JavaScript -->
     <script src="assets/js/main.js"></script>
 </body>
 </html>
