@@ -1292,6 +1292,64 @@ ul { list-style: none; }
 }
 
 /* =============================================
+   MODAL TÉLÉCHARGER
+   ============================================= */
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+}
+.modal-overlay.active {
+    display: flex;
+}
+.modal-box {
+    background: var(--primary);
+    border-radius: 20px;
+    padding: 40px 36px 36px;
+    max-width: 420px;
+    width: 90%;
+    position: relative;
+    box-shadow: var(--shadow-lg);
+    animation: modalIn 0.25s ease;
+}
+@keyframes modalIn {
+    from { opacity: 0; transform: translateY(20px) scale(0.97); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+.modal-close {
+    position: absolute;
+    top: 14px;
+    right: 18px;
+    background: none;
+    border: none;
+    color: var(--secondary);
+    font-size: 1.6rem;
+    cursor: pointer;
+    line-height: 1;
+    opacity: 0.7;
+    transition: opacity var(--transition);
+}
+.modal-close:hover { opacity: 1; }
+.modal-title {
+    color: var(--secondary);
+    font-size: 1.15rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 28px;
+}
+.modal-store-badges {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* =============================================
    RESPONSIVE
    ============================================= */
 

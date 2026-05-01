@@ -12,8 +12,33 @@ document.addEventListener('DOMContentLoaded', function () {
     initHelpTabs();
     initSignupForm();
     initSmoothScroll();
+    initModalTelecharger();
 
 });
+
+/* ===== MODAL TÉLÉCHARGER ===== */
+function initModalTelecharger() {
+    const modal       = document.getElementById('modal-telecharger');
+    const btnNav      = document.getElementById('btn-telecharger');
+    const btnMobile   = document.getElementById('btn-telecharger-mobile');
+    const btnClose    = document.getElementById('modal-close-btn');
+    if (!modal) return;
+
+    function openModal() { modal.classList.add('active'); }
+    function closeModal() { modal.classList.remove('active'); }
+
+    if (btnNav)    btnNav.addEventListener('click', openModal);
+    if (btnMobile) btnMobile.addEventListener('click', openModal);
+    if (btnClose)  btnClose.addEventListener('click', closeModal);
+
+    modal.addEventListener('click', function (e) {
+        if (e.target === modal) closeModal();
+    });
+
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closeModal();
+    });
+}
 
 /* ===== NAVIGATION : bordure au scroll ===== */
 function initNav() {
