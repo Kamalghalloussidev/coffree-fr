@@ -41,3 +41,4 @@ build/
 *.bak
 *.backup
 .vercel
+.env*.local
