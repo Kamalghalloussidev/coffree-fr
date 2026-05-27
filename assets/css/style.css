@@ -1350,6 +1350,76 @@ ul { list-style: none; }
 }
 
 /* =============================================
+   MODAL CONTACT
+   ============================================= */
+
+.modal-contact-box {
+    max-width: 560px;
+    width: 94%;
+    padding: 44px 40px 36px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 4px;
+}
+
+.contact-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.contact-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.contact-form-group label {
+    color: var(--secondary);
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+}
+
+.contact-form-group input,
+.contact-form-group textarea {
+    background: rgba(255,255,255,0.08);
+    border: 1.5px solid rgba(240,232,219,0.25);
+    border-radius: 8px;
+    color: var(--secondary);
+    font-family: inherit;
+    font-size: 0.95rem;
+    padding: 11px 14px;
+    transition: border-color var(--transition), background var(--transition);
+    outline: none;
+    resize: none;
+    width: 100%;
+}
+
+.contact-form-group input::placeholder,
+.contact-form-group textarea::placeholder {
+    color: rgba(240,232,219,0.45);
+}
+
+.contact-form-group input:focus,
+.contact-form-group textarea:focus {
+    border-color: var(--secondary);
+    background: rgba(255,255,255,0.12);
+}
+
+.contact-form-submit {
+    width: 100%;
+    margin-top: 6px;
+    padding: 13px;
+    font-size: 1rem;
+}
+
+/* =============================================
    RESPONSIVE
    ============================================= */
 
@@ -1465,5 +1535,15 @@ ul { list-style: none; }
     }
     .help-tab {
         justify-content: center;
+    }
+}
+
+/* Contact modal : responsive tablette/mobile */
+@media (max-width: 640px) {
+    .modal-contact-box {
+        padding: 36px 22px 28px;
+    }
+    .contact-form-row {
+        grid-template-columns: 1fr;
     }
 }

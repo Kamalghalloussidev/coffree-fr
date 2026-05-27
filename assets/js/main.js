@@ -10,11 +10,45 @@ document.addEventListener('DOMContentLoaded', function () {
     initFlowTabs();
     initFlowAnimation();
     initHelpTabs();
-    initSignupForm();
     initSmoothScroll();
     initModalTelecharger();
+    initModalContact();
 
 });
+
+/* ===== MODAL CONTACT ===== */
+function initModalContact() {
+    const modal    = document.getElementById('modal-contact');
+    const btnClose = document.getElementById('modal-contact-close');
+    const triggers = document.querySelectorAll('[data-modal="contact"]');
+    if (!modal) return;
+
+    function openModal() {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+    function closeModal() {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    triggers.forEach(function(el) {
+        el.addEventListener('click', function(e) {
+            e.preventDefault();
+            openModal();
+        });
+    });
+
+    if (btnClose) btnClose.addEventListener('click', closeModal);
+
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) closeModal();
+    });
+
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.classList.contains('active')) closeModal();
+    });
+}
 
 /* ===== MODAL TÉLÉCHARGER ===== */
 function initModalTelecharger() {

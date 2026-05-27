@@ -26,7 +26,7 @@
                 <li><a href="#how-it-works">Comment ça marche</a></li>
                 <li><a href="#about">À propos</a></li>
                 <li><a href="#aide">Aide</a></li>
-                <li><a href="#download">Contact</a></li>
+                <li><a href="#" data-modal="contact">Contact</a></li>
             </ul>
             <button id="btn-telecharger" class="btn btn-nav">Télécharger</button>
             <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
@@ -584,16 +584,8 @@
     <section id="download" class="section section-dark">
         <div class="container">
             <header class="section-header section-header-light">
-                <h2>Soyez parmi les premiers</h2>
-                <p>L'app arrive bientôt sur iOS et Android. Inscrivez-vous pour être notifié dès le lancement.</p>
+                <h2>Téléchargez l'application</h2>
             </header>
-            <form class="signup-form" id="signupForm" novalidate>
-                <div class="signup-fields">
-                    <input type="email" name="email" placeholder="Votre adresse e-mail" required autocomplete="email">
-                    <button type="submit" class="btn btn-cta">S'inscrire</button>
-                </div>
-                <p class="signup-note">Aucun spam. Désinscription en un clic.</p>
-            </form>
             <div class="store-badges">
                 <a href="https://apps.apple.com/fr/app/coffree/id6766796467" class="store-badge" title="Disponible sur App Store" target="_blank" rel="noopener noreferrer">
                     <img src="assets/svg/apple-13.svg" alt="Apple iOS" class="store-icon">
@@ -624,7 +616,7 @@
                 <ul class="footer-links">
                     <li><a href="policy.html">CGU</a></li>
                     <li><a href="#">Mentions légales</a></li>
-                    <li><a href="#download">Contact</a></li>
+                    <li><a href="#" data-modal="contact">Contact</a></li>
                 </ul>
             </div>
             <p class="footer-copy">&copy; 2026 Cof'free. Tous droits réservés.</p>
@@ -640,7 +632,7 @@
                 <a href="#how-it-works">Comment ça marche</a>
                 <a href="#about">À propos</a>
                 <a href="#aide">Aide</a>
-                <a href="#download">Contact</a>
+                <a href="#" data-modal="contact">Contact</a>
                 <button id="btn-telecharger-mobile" class="navpanel-cta">Télécharger</button>
             </nav>
         </div>
@@ -668,6 +660,42 @@
                     </div>
                 </a>
             </div>
+        </div>
+    </div>
+
+    <!-- Modal Contact -->
+    <div id="modal-contact" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-contact-title">
+        <div class="modal-box modal-contact-box">
+            <button class="modal-close" id="modal-contact-close" aria-label="Fermer">&times;</button>
+            <p id="modal-contact-title" class="modal-title">Nous contacter</p>
+            <form class="contact-form" id="contactForm" action="https://formsubmit.co/mehdi-khelfi@coffree.fr" method="POST">
+                <input type="hidden" name="_subject" value="Nouveau message depuis Cof'free">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
+                <div class="contact-form-row">
+                    <div class="contact-form-group">
+                        <label for="contact-nom">Nom</label>
+                        <input type="text" id="contact-nom" name="nom" placeholder="Votre nom" required autocomplete="family-name">
+                    </div>
+                    <div class="contact-form-group">
+                        <label for="contact-prenom">Prénom</label>
+                        <input type="text" id="contact-prenom" name="prenom" placeholder="Votre prénom" required autocomplete="given-name">
+                    </div>
+                </div>
+                <div class="contact-form-group">
+                    <label for="contact-tel">Téléphone</label>
+                    <input type="tel" id="contact-tel" name="telephone" placeholder="Votre numéro de téléphone" autocomplete="tel">
+                </div>
+                <div class="contact-form-group">
+                    <label for="contact-objet">Objet</label>
+                    <input type="text" id="contact-objet" name="objet" placeholder="Objet de votre message" required>
+                </div>
+                <div class="contact-form-group">
+                    <label for="contact-message">Message</label>
+                    <textarea id="contact-message" name="message" rows="4" placeholder="Votre message..." required></textarea>
+                </div>
+                <button type="submit" class="btn btn-cta contact-form-submit">Envoyer</button>
+            </form>
         </div>
     </div>
 
