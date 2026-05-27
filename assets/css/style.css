@@ -1413,9 +1413,9 @@ ul { list-style: none; }
 }
 
 .contact-form-submit {
-    width: 100%;
+    align-self: flex-end;
     margin-top: 6px;
-    padding: 13px;
+    padding: 13px 32px;
     font-size: 1rem;
 }
 
