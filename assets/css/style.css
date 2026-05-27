@@ -171,7 +171,7 @@ ul { list-style: none; }
 .nav-logo span {
     font-size: 1.2rem;
     font-weight: 700;
-    color: var(--white);
+    color: var(--secondary);
     letter-spacing: 0.5px;
 }
 
@@ -1193,7 +1193,7 @@ ul { list-style: none; }
     object-fit: cover;
 }
 .footer-brand span {
-    color: var(--white);
+    color: var(--secondary);
     font-weight: 700;
     font-size: 1rem;
 }
