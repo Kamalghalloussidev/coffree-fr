@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
     initSmoothScroll();
     initModalTelecharger();
     initModalContact();
+    initContactForm();
 
 });
 
@@ -26,6 +27,9 @@ function initModalContact() {
     function openModal() {
         modal.classList.add('active');
         document.body.style.overflow = 'hidden';
+        generateCaptcha();
+        const fb = document.getElementById('contact-feedback');
+        if (fb) { fb.textContent = ''; fb.className = 'contact-feedback'; }
     }
     function closeModal() {
         modal.classList.remove('active');
@@ -48,6 +52,75 @@ function initModalContact() {
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape' && modal.classList.contains('active')) closeModal();
     });
+}
+
+/* ===== FORMULAIRE CONTACT AJAX ===== */
+let _captchaAnswer = 0;
+
+function generateCaptcha() {
+    const a = Math.floor(Math.random() * 10) + 1;
+    const b = Math.floor(Math.random() * 10) + 1;
+    const q = document.getElementById('captcha-question');
+    if (q) q.textContent = a + ' + ' + b + ' =';
+    _captchaAnswer = a + b;
+}
+
+function initContactForm() {
+    const form = document.getElementById('contactForm');
+    if (!form) return;
+
+    form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+
+        // Honeypot
+        const honey = form.querySelector('input[name="_honey"]');
+        if (honey && honey.value.trim() !== '') return;
+
+        // Captcha arithmétique
+        const captchaInput = document.getElementById('captcha-input');
+        if (!captchaInput || parseInt(captchaInput.value, 10) !== _captchaAnswer) {
+            showContactFeedback('Réponse incorrecte à la vérification anti-robot.', false);
+            if (captchaInput) { captchaInput.value = ''; captchaInput.focus(); }
+            generateCaptcha();
+            return;
+        }
+
+        const btn = form.querySelector('.contact-form-submit');
+        btn.disabled = true;
+        btn.textContent = 'Envoi en cours…';
+
+        const fd = new FormData(form);
+        fd.delete('captcha_verify');
+
+        try {
+            const res = await fetch('https://formsubmit.co/ajax/gestioncoffree@gmail.com', {
+                method: 'POST',
+                headers: { 'Accept': 'application/json' },
+                body: fd
+            });
+            const json = await res.json();
+            if (json.success === 'true' || json.success === true) {
+                showContactFeedback('✓ Message envoyé ! Nous vous répondrons rapidement.', true);
+                form.reset();
+                generateCaptcha();
+            } else {
+                showContactFeedback('Une erreur est survenue. Veuillez réessayer.', false);
+            }
+        } catch (_) {
+            showContactFeedback('Erreur réseau. Vérifiez votre connexion et réessayez.', false);
+        } finally {
+            btn.disabled = false;
+            btn.textContent = 'Envoyer';
+        }
+    });
+}
+
+function showContactFeedback(msg, success) {
+    const el = document.getElementById('contact-feedback');
+    if (!el) return;
+    el.textContent = msg;
+    el.className = 'contact-feedback ' + (success ? 'success' : 'error');
+    el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
 
 /* ===== MODAL TÉLÉCHARGER ===== */
