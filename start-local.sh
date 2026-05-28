@@ -9,7 +9,7 @@ echo "   Appuyez sur Ctrl+C pour arrêter."
 echo ""
 
 # Ouvre le navigateur après un court délai
-(sleep 1 && open "http://localhost:$PORT") &
+(sleep 1 && open -a "Brave Browser" "http://localhost:$PORT") &
 
 # Lance le serveur HTTP avec Python 3
 cd "$PROJECT_DIR" && python3 -m http.server $PORT
