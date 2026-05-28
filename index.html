@@ -111,7 +111,7 @@
                 <h1>Votre coffre de voiture devient votre <span>point relais personnel.</span></h1>
                 <p class="banner-sub">Transformez votre coffre en point relais autonome : recevez toutes vos livraisons sans être présent… et gagnez un revenu passif en le partageant.</p>
                 <div class="banner-actions">
-                    <a href="#features" class="btn btn-outline">Découvrir l'app</a>
+                    <button class="btn btn-outline" onclick="document.getElementById('video-modal').style.display='flex'">Découvrir notre vidéo promotionnel</button>
                 </div>
             </div>
             <div class="banner-visual">
@@ -758,6 +758,13 @@
                 <button type="submit" class="btn btn-cta contact-form-submit">Envoyer</button>
             </form>
         </div>
+    </div>
+
+    <!-- Modale vidéo promotionnelle -->
+    <div id="video-modal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:9999;align-items:center;justify-content:center;" onclick="this.style.display='none'">
+        <video controls autoplay style="max-width:90vw;max-height:80vh;border-radius:12px;box-shadow:0 8px 40px rgba(0,0,0,.6)" onclick="event.stopPropagation()">
+            <source src="assets/vid%C3%A9os/video.mp4" type="video/mp4">
+        </video>
     </div>
 
     <script src="assets/js/main.js"></script>
