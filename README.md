@@ -1,10 +1,3 @@
-# COFFREE.FR 🌿
-
-Site et application mobile en cours de développement.
-
-![Status](https://img.shields.io/badge/status-en%20construction-yellow)
-![Platform](https://img.shields.io/badge/platform-Web%20%7C%20Android%20%7C%20iOS-green)
-
 ## 📋 À propos
 
 COFFREE.FR est une plateforme innovante actuellement en développement qui sera disponible sur :
