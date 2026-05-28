@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+Disallow: /policy.html
+
+Sitemap: https://coffree.fr/sitemap.xml
