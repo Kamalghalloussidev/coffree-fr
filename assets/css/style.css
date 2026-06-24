@@ -539,6 +539,44 @@ ul { list-style: none; }
 }
 
 /* =============================================
+   PARTENAIRES — GRILLE DE LOGOS
+   ============================================= */
+
+.partners-grid {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+}
+
+.partner-logo {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 28px 40px;
+    margin: 0;
+    flex: 0 1 240px;
+    min-height: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+.partner-logo:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+}
+.partner-logo img {
+    max-width: 100%;
+    max-height: 72px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+/* =============================================
    HIGHLIGHTS — ALTERNANCE GAUCHE / DROITE
    ============================================= */
 
@@ -1599,6 +1637,16 @@ ul { list-style: none; }
     }
     .help-tab {
         justify-content: center;
+    }
+
+    /* Partenaires : logos pleine largeur sur petit mobile */
+    .partners-grid {
+        gap: 18px;
+    }
+    .partner-logo {
+        flex-basis: 100%;
+        min-height: 110px;
+        padding: 24px 28px;
     }
 }
 
